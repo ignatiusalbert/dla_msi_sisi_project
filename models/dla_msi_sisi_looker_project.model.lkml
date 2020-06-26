@@ -18,7 +18,7 @@ persist_with: dla_msi_sisi_looker_project_default_datagroup
 
 # explore: vw_data_heat_consumption {}
 
-# explore: vw_energi_listrik {}
+explore: vw_energi_listrik {}
 
 # explore: vw_energi_panas {}
 
