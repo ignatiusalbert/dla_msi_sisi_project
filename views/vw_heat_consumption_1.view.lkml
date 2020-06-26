@@ -1,5 +1,5 @@
 view: vw_heat_consumption_1 {
-  sql_table_name: `sisi_poc.vw_heat_consumption_1`
+  sql_table_name: `smig-smart-plan-poc.sisi_poc.vw_heat_consumption_1`
     ;;
 
   dimension: addr {
@@ -7,28 +7,28 @@ view: vw_heat_consumption_1 {
     sql: ${TABLE}.addr ;;
   }
 
-  dimension: calciner_coal_dosing_flow_a {
-    type: number
+  measure: calciner_coal_dosing_flow_a {
+    type: average
     sql: ${TABLE}.calciner_coal_dosing_flow_a ;;
   }
 
-  dimension: calciner_coal_dosing_flow_b {
-    type: number
+  measure: calciner_coal_dosing_flow_b {
+    type: average
     sql: ${TABLE}.calciner_coal_dosing_flow_b ;;
   }
 
-  dimension: calciner_oil_dosing_flow {
-    type: number
+  measure: calciner_oil_dosing_flow {
+    type: average
     sql: ${TABLE}.calciner_oil_dosing_flow ;;
   }
 
-  dimension: clinker_heat_consumption_in_calciner {
-    type: number
+  measure: clinker_heat_consumption_in_calciner {
+    type: average
     sql: ${TABLE}.clinker_heat_consumption_in_calciner ;;
   }
 
-  dimension: clinker_heat_consumption_in_kiln {
-    type: number
+  measure: clinker_heat_consumption_in_kiln {
+    type: average
     sql: ${TABLE}.clinker_heat_consumption_in_kiln ;;
   }
 
@@ -42,18 +42,18 @@ view: vw_heat_consumption_1 {
     sql: ${TABLE}.datatype ;;
   }
 
-  dimension: estimated_clinker_production_rate {
-    type: number
+  measure: estimated_clinker_production_rate {
+    type: average
     sql: ${TABLE}.estimated_clinker_production_rate ;;
   }
 
-  dimension: kiln_coal_dosing_flow {
-    type: number
+  measure: kiln_coal_dosing_flow {
+    type: average
     sql: ${TABLE}.kiln_coal_dosing_flow ;;
   }
 
-  dimension: kiln_oil_dosing_flow {
-    type: number
+  measure: kiln_oil_dosing_flow {
+    type: average
     sql: ${TABLE}.kiln_oil_dosing_flow ;;
   }
 
@@ -62,18 +62,18 @@ view: vw_heat_consumption_1 {
     sql: ${TABLE}.location ;;
   }
 
-  dimension: measured_clinker_production_rate {
-    type: number
+  measure: measured_clinker_production_rate {
+    type: average
     sql: ${TABLE}.measured_clinker_production_rate ;;
   }
 
-  dimension: nhv_fine_coal {
-    type: number
+  measure: nhv_fine_coal {
+    type: average
     sql: ${TABLE}.nhv_fine_coal ;;
   }
 
-  dimension: nhv_oil {
-    type: number
+  measure: nhv_oil {
+    type: average
     sql: ${TABLE}.nhv_oil ;;
   }
 
@@ -82,13 +82,22 @@ view: vw_heat_consumption_1 {
     sql: ${TABLE}.quality ;;
   }
 
-  dimension: timestamp {
-    type: string
-    sql: ${TABLE}.timestamp ;;
+  dimension_group: timestamp {
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    sql: CAST(${TABLE}.timestamp AS TIMESTAMP) ;;
   }
 
-  dimension: total_clinker_heat_consumption {
-    type: number
+  measure: total_clinker_heat_consumption {
+    type: average
     sql: ${TABLE}.total_clinker_heat_consumption ;;
   }
 

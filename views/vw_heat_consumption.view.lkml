@@ -1,5 +1,5 @@
 view: vw_heat_consumption {
-  sql_table_name: `sisi_poc.vw_heat_consumption`
+  sql_table_name: `smig-smart-plan-poc.sisi_poc.vw_heat_consumption`
     ;;
 
   dimension: addr {
@@ -42,13 +42,22 @@ view: vw_heat_consumption {
     sql: ${TABLE}.tag_number ;;
   }
 
-  dimension: timestamp {
-    type: string
-    sql: ${TABLE}.timestamp ;;
+  dimension_group: timestamp {
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    sql: CAST(${TABLE}.timestamp AS TIMESTAMP) ;;
   }
 
-  dimension: value {
-    type: number
+  measure: value {
+    type: average
     sql: ${TABLE}.value ;;
   }
 

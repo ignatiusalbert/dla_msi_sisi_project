@@ -1,5 +1,5 @@
 view: unique_opc_data {
-  sql_table_name: `sisi_poc.unique_opc_data`
+  sql_table_name: `smig-smart-plan-poc.sisi_poc.unique_opc_data`
     ;;
 
   dimension: addr {
@@ -27,13 +27,22 @@ view: unique_opc_data {
     sql: ${TABLE}.quality ;;
   }
 
-  dimension: timestamp {
-    type: string
-    sql: ${TABLE}.timestamp ;;
+  dimension_group: timestamp {
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    sql: CAST(${TABLE}.timestamp AS TIMESTAMP) ;;
   }
 
-  dimension: value {
-    type: string
+  measure: value {
+    type: average
     sql: ${TABLE}.value ;;
   }
 
