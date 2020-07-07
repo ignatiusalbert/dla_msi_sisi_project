@@ -69,6 +69,7 @@ view: vw_energi_listrik {
   measure: value {
     type: average
     sql: ${TABLE}.value ;;
+    value_format: "#,##0.00"
   }
 
   measure: count {

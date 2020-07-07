@@ -5,51 +5,61 @@ view: vw_heat_consumption_2 {
   measure: calciner_coal_dosing_flow_a {
     type: average
     sql: ${TABLE}.calciner_coal_dosing_flow_a ;;
+    value_format: "#,##0.00"
   }
 
   measure: calciner_coal_dosing_flow_b {
     type: average
     sql: ${TABLE}.calciner_coal_dosing_flow_b ;;
+    value_format: "#,##0.00"
   }
 
   measure: calciner_oil_dosing_flow {
     type: average
     sql: ${TABLE}.calciner_oil_dosing_flow ;;
+    value_format: "#,##0.00"
   }
 
   measure: clinker_heat_consumption_in_calciner {
     type: average
     sql: ${TABLE}.clinker_heat_consumption_in_calciner ;;
+    value_format: "#,##0.00"
   }
 
   measure: clinker_heat_consumption_in_kiln {
     type: average
     sql: ${TABLE}.clinker_heat_consumption_in_kiln ;;
+    value_format: "#,##0.00"
   }
 
   measure: estimated_clinker_production_rate {
     type: average
     sql: ${TABLE}.estimated_clinker_production_rate ;;
+    value_format: "#,##0.00"
   }
 
   measure: kiln_coal_dosing_flow {
     type: average
     sql: ${TABLE}.kiln_coal_dosing_flow ;;
+    value_format: "#,##0.00"
   }
 
   measure: kiln_oil_dosing_flow {
     type: average
     sql: ${TABLE}.kiln_oil_dosing_flow ;;
+    value_format: "#,##0.00"
   }
 
   measure: measured_clinker_production_rate {
     type: average
     sql: ${TABLE}.measured_clinker_production_rate ;;
+    value_format: "#,##0.00"
   }
 
   measure: nhv_oil {
     type: average
     sql: ${TABLE}.nhv_oil ;;
+    value_format: "#,##0.00"
   }
 
   dimension: sensor_data {
@@ -74,6 +84,7 @@ view: vw_heat_consumption_2 {
   measure: total_clinker_heat_consumption {
     type: average
     sql: ${TABLE}.total_clinker_heat_consumption ;;
+    value_format: "#,##0.00"
   }
 
   measure: count {
