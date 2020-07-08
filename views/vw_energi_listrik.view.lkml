@@ -76,4 +76,8 @@ view: vw_energi_listrik {
     type: count
     drill_fields: [equipment_name, parameter_name]
   }
+
+  measure: last_updated_datetime {
+    sql: MAX(${TABLE}.timestamp ;;
+  }
 }
