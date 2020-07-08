@@ -73,7 +73,7 @@ view: vw_energi_listrik {
   }
 
   measure: last_updated_datetime {
-    sql: MAX(${TABLE}.datetime_string_field) ;;
+    sql: MAX(${TABLE}.timestamp) ;;
   }
 
   measure: count {
