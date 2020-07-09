@@ -16,9 +16,9 @@ persist_with: dla_msi_sisi_looker_project_default_datagroup
 
 # explore: unique_opc_data {}
 
-explore: vw_cement_mill1_rembang_realtime {}
+#explore: vw_cement_mill1_rembang_realtime {}
 
-explore: vw_cement_mill2_rembang_realtime {}
+#explore: vw_cement_mill2_rembang_realtime {}
 
 # explore: vw_data_heat_consumption {}
 
@@ -28,13 +28,17 @@ explore: vw_energi_listrik {
   sql_always_where: ${max_date_dim_listrik} = ${timestamp_date} ;;
 }
 
-explore: vw_cement_mill1_rembang {
-  sql_always_where: ${max_date_dim_mill1} = ${timekey_date} ;;
-}
+#explore: vw_cement_mill1_rembang {
+#  sql_always_where: ${max_date_dim_mill1} = ${timekey_date} ;;
+#}
 
-explore: vw_cement_mill2_rembang {
-  sql_always_where: ${max_date_dim_mill2} = ${timekey_date} ;;
-}
+#explore: vw_cement_mill2_rembang {
+#  sql_always_where: ${max_date_dim_mill2} = ${timekey_date} ;;
+#}
+
+explore: vw_cement_mill1_rembang {}
+
+explore: vw_cement_mill2_rembang {}
 
 explore: vw_energi_listrik_realtime {}
 

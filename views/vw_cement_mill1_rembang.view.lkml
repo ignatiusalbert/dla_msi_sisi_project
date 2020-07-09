@@ -21,11 +21,11 @@ view: vw_cement_mill1_rembang {
     sql: ${TABLE}.timekey ;;
   }
 
-  dimension: max_date_dim_mill1 {
-    type: date
-    sql: (SELECT MAX(${timekey_date}) from vw_cement_mill1_rembang) ;;
-    convert_tz: no
-  }
+  #dimension: max_date_dim_mill1 {
+  #  type: date
+  # sql: (SELECT MAX(${timekey_date}) from vw_cement_mill1_rembang) ;;
+  #  convert_tz: no
+  #}
 
   measure: value_01_541be01 {
     type: average
