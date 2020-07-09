@@ -28,6 +28,14 @@ explore: vw_energi_listrik {
   sql_always_where: ${max_date_dim} = ${timestamp_date} ;;
 }
 
+explore: vw_cement_mill1_rembang_realtime {
+  sql_always_where: ${max_date_dim} = ${timekey_date}_date} ;;
+}
+
+explore: vw_cement_mill2_rembang_realtime {
+  sql_always_where: ${max_date_dim} = ${timekey_date}_date} ;;
+}
+
 explore: vw_energi_listrik_2 {}
 
 # explore: vw_energi_panas {}
