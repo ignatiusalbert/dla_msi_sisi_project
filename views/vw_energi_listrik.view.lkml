@@ -70,7 +70,7 @@ view: vw_energi_listrik {
 
   dimension: max_date_dim {
     type: date
-    sql: (SELECT MAX(${timestamp_date}) from `smig-smart-plan-poc.sisi_poc.vw_energi_listrik`) ;;
+    sql: MAX(${TABLE}.timestamp);;
     convert_tz: no
   }
 
