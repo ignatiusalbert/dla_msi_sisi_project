@@ -58,7 +58,7 @@ view: vw_heat_consumption_realtime {
 
   dimension: max_date_dim {
     type: date
-    sql: (SELECT MAX(${timestamp_date}_date}_date}) from vw_heat_consumption) ;;
+    sql: (SELECT MAX(${timestamp_date}) from vw_heat_consumption) ;;
     convert_tz: no
   }
 
