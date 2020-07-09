@@ -63,7 +63,7 @@ view: vw_heat_consumption {
   }
 
   measure: value {
-    type: average
+    type: sum
     sql: ${TABLE}.value ;;
     value_format: "#,##0.00"
   }

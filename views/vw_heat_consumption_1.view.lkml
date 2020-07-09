@@ -26,13 +26,13 @@ view: vw_heat_consumption_1 {
   }
 
   measure: clinker_heat_consumption_in_calciner {
-    type: average
+    type: sum
     sql: ${TABLE}.clinker_heat_consumption_in_calciner ;;
     value_format: "#,##0.00"
   }
 
   measure: clinker_heat_consumption_in_kiln {
-    type: average
+    type: sum
     sql: ${TABLE}.clinker_heat_consumption_in_kiln ;;
     value_format: "#,##0.00"
   }
@@ -48,7 +48,7 @@ view: vw_heat_consumption_1 {
   }
 
   measure: estimated_clinker_production_rate {
-    type: average
+    type: sum
     sql: ${TABLE}.estimated_clinker_production_rate ;;
     value_format: "#,##0.00"
   }
@@ -71,7 +71,7 @@ view: vw_heat_consumption_1 {
   }
 
   measure: measured_clinker_production_rate {
-    type: average
+    type: sum
     sql: ${TABLE}.measured_clinker_production_rate ;;
     value_format: "#,##0.00"
   }
@@ -108,7 +108,7 @@ view: vw_heat_consumption_1 {
   }
 
   measure: total_clinker_heat_consumption {
-    type: average
+    type: sum
     sql: ${TABLE}.total_clinker_heat_consumption ;;
     value_format: "#,##0.00"
   }
