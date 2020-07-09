@@ -66,15 +66,23 @@ view: vw_energi_listrik {
     sql: CAST(${TABLE}.timestamp AS TIMESTAMP) ;;
   }
 
+### This is the new dimension we created to get the max date from the dimension ###group. We use a subquery in the SQL statement. This SQL example was based ###off of MySQL.
+
+  dimension: max_date_dim {
+    type: date
+    sql: (SELECT MAX(${timestamp_date}) from `smig-smart-plan-poc.sisi_poc.vw_energi_listrik`) ;;
+    convert_tz: no
+  }
+
   measure: value {
     type: average
     sql: ${TABLE}.value ;;
     value_format: "#,##0.00"
   }
 
-  measure: last_updated_datetime {
-    sql: MAX(${TABLE}.timestamp) ;;
-  }
+  #measure: last_updated_datetime {
+  #  sql: MAX(${TABLE}.timestamp) ;;
+  #}
 
   measure: count {
     type: count

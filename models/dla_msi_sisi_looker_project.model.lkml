@@ -22,7 +22,13 @@ explore: vw_cement_mill2_rembang {}
 
 # explore: vw_data_heat_consumption {}
 
-explore: vw_energi_listrik {}
+#### We then add a sql_always_where to the explore and we set the condition of we ### want the returned_date to be equal to the max_date_dim.
+
+explore: vw_energi_listrik {
+  sql_always_where: ${max_date_dim} = ${timestamp_date} ;;
+}
+
+#explore: vw_energi_listrik {}
 
 # explore: vw_energi_panas {}
 
