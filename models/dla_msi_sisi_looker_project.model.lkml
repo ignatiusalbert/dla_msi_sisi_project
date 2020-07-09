@@ -42,6 +42,11 @@ explore: vw_energi_listrik_2 {}
 
 explore: vw_heat_consumption {}
 
+explore: vw_heat_consumption_realtime {
+  sql_always_where: ${max_date_dim} = ${timestamp_date} ;;
+}
+
+
 explore: vw_heat_consumption_1 {}
 
 explore: vw_heat_consumption_2 {}
