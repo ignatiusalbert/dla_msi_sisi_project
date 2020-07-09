@@ -68,7 +68,7 @@ view: vw_energi_listrik_realtime {
 
 ### This is the new dimension we created to get the max date from the dimension ###group. We use a subquery in the SQL statement. This SQL example was based ###off of MySQL.
 
-  dimension: max_date_dim {
+  dimension: max_date_dim_listrik {
     type: date
     sql: (SELECT MAX(${timestamp_date}) from vw_energi_listrik) ;;
     convert_tz: no

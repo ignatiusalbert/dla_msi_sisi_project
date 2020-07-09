@@ -21,9 +21,9 @@ view: vw_cement_mill2_rembang_realtime {
     sql: ${TABLE}.timekey ;;
   }
 
-  dimension: max_date_dim {
+  dimension: max_date_dim_mill2 {
     type: date
-    sql: (SELECT MAX(${timekey_date}_date}) from vw_cement_mill2_rembang) ;;
+    sql: (SELECT MAX(${timekey_date}) from vw_cement_mill2_rembang) ;;
     convert_tz: no
   }
 

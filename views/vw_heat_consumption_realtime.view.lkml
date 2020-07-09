@@ -56,7 +56,7 @@ view: vw_heat_consumption_realtime {
     sql: CAST(${TABLE}.timestamp AS TIMESTAMP) ;;
   }
 
-  dimension: max_date_dim {
+  dimension: max_date_dim_heat {
     type: date
     sql: (SELECT MAX(${timestamp_date}) from vw_heat_consumption) ;;
     convert_tz: no
