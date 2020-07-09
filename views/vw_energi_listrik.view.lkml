@@ -70,7 +70,7 @@ view: vw_energi_listrik {
 
   dimension: max_date_dim {
     type: date
-    sql: MAX(${TABLE}.timestamp);;
+    sql: (SELECT MAX(${timestamp_date}) from vw_energi_listrik) ;;
     convert_tz: no
   }
 
