@@ -28,7 +28,7 @@ explore: vw_energi_listrik {
   sql_always_where: ${max_date_dim} = ${timestamp_date} ;;
 }
 
-#explore: vw_energi_listrik {}
+explore: vw_energi_listrik_2 {}
 
 # explore: vw_energi_panas {}
 
