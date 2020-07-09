@@ -56,6 +56,12 @@ view: vw_heat_consumption {
     sql: CAST(${TABLE}.timestamp AS TIMESTAMP) ;;
   }
 
+  dimension: max_date_dim_heat {
+    type: date
+    sql: (SELECT MAX(${timestamp_date}) from vw_heat_consumption) ;;
+    convert_tz: no
+  }
+
   measure: value {
     type: average
     sql: ${TABLE}.value ;;
